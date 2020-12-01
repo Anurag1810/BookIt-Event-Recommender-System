@@ -1,0 +1,7 @@
+{
+  "name": "EventBookingSystem-master",
+  "version": "1.0.0",
+  "dependencies": {
+    "swiper": "^6.3.5"
+  }
+}
