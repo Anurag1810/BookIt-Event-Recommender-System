@@ -7,22 +7,22 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+.modal_1 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 
 /* Modal Content */
-.modal-content {
+.modal-content_1 {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
@@ -49,7 +49,40 @@
 }
 .chatbot{
   width: 100%;
-  height: 100%;
+  height: 90%;
+}
+
+.chatbtn{
+    background-color:pink;
+    color: white;
+    border-color: white
+}
+.chatbtn:hover{
+    background-color: deeppink;
+    color: white;
+    border-color: white
+}
+
+.GRbtn{
+    background-color:deepskyblue;
+    color: white;
+    border-color: white
+}
+.GRbtn:hover{
+    background-color: dodgerblue;
+    color: white;
+    border-color: white
+}
+
+.loginbtn{
+    background-color:palegreen;
+    color: white;
+    border-color: white
+}
+.loginbtn:hover{
+    background-color: limegreen;
+    color: white;
+    border-color: white
 }
 </style>
 </head>
@@ -61,7 +94,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          <button type="button" class="btn btn-outline-primary my-2 my-sm-0 mr-2 chatbtn" style="height: 40px; background-color:plum ">
+              <a class="nav-link" href="/" style="margin-top: -5px">Home <span class="sr-only">(current)</span></a>
+          </button>
       </li>
       {% if current_user.is_authenticated == True %}
       <li class="nav-item">
@@ -81,7 +116,7 @@
       {% endif %}
       {% endif %}
     </ul>
-    <div class="form-inline my-2 my-lg-0">    
+    <div class="form-inline my-2 my-lg-0" style="margin-right: 170px;">
       {% if current_user.is_authenticated == True %}
       <span style="margin-right: 10px">Hi, {{ current_user.name  }}</span>
       <form id='logout' method="POST" action="/logout">
@@ -90,20 +125,20 @@
         </button>
       </form>
       {% else %}
-      <button id="chat" type="button" class="btn btn-outline-primary my-2 my-sm-0 mr-2">
+      <button id="chat" type="button" class="btn btn-outline-primary my-2 my-sm-0 mr-2 chatbtn">
         Chat
       </button>
-      <div id="myModal" class="modal">
+      <div id="myModal" class="modal_1">
           <!-- Modal content -->
-          <div class="modal-content">
+          <div class="modal-content_1">
             <span class="close">&times;</span>
             <iframe id='chatbot' src='https://webchat.botframework.com/embed/khushbooportfoliobot-bot?s=XtOuOIHx1ds.S_e_E_aNHranGTEdc56Y7N5V97EZ_7WLv3jcRpvhKak' class="chatbot"></iframe>
           </div>
       </div>
-      <button type="button" class="btn btn-outline-primary my-2 my-sm-0 mr-2" data-toggle="modal" data-target="#signin_modal">
+      <button type="button" class="btn btn-outline-primary my-2 my-sm-0 mr-2 GRbtn" data-toggle="modal" data-target="#signin_modal">
         Guest Registration
       </button>        
-      <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#login_modal">
+      <button type="button" class="btn btn-outline-success my-2 my-sm-0 loginbtn" data-toggle="modal" data-target="#login_modal">
         Login
       </button>      
       {% endif %}
