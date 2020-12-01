@@ -21,7 +21,7 @@ ems = EMS()
 def pagination(event_type, page):
 	events = ems.get_events_by_type(event_type)
 	events = events[page*8: page*8+8]
-	events_list = [events[i:i+4] for i in range(0, len(events), 4)]
+	events_list = [events[i:i+4] for i in range(0, len(events))]
 	return events_list
 
 #index redirect
@@ -88,8 +88,7 @@ def load_more():
 	page = int(request.args.get('page'))
 	events_list = pagination(type, page)
 	page = page + 1
-
-	if len(events_list) == 0:
+	if page == 2:
 		return jsonify({'status': 'no more'})
 	return  jsonify({'status': 'success', 'html': render_template('events_page.html', events_list = events_list), 'page': page})
 
