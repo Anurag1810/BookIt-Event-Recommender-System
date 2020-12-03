@@ -180,6 +180,8 @@ def load_session():
 	return jsonify({'user_type': userType, 'early_bird': early_bird, 'status': 'loaded', 'html':render_template('event_details_session.html', session=session, attended=attended, attendance=round(attendance))})
 
 
+
+
 # attend the chosen session
 @app.route('/attend_session', methods=['POST'])
 @login_required

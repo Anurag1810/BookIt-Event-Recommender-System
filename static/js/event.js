@@ -33,11 +33,12 @@
 		    			$('#attend_button').html(`<button type="button" class="btn btn-outline-info" 
 		    				data-toggle="modal" data-target="#confirm_modal">Reserve</button>`);
 		    			$('#confirm_modal-Label').text('Reserve Confirmation');
-		    			$('.confirm_modal_body').text('Are you sure you want to reserve this session? (Free of charge)');
+						$('.confirm_modal_body').text('Are you sure you want to reserve this session? (Free of charge)');
 		    			$('#confirm').attr({'action': '/attend_session'});
 
 		    			if (data.user_type === 'guest') {
-		    				$('.confirm_modal_body').text('Are you sure you want to reserve this session? You will be changed $100 as a registration fee.');
+							$('.confirm_modal_body').text('Are you sure you want to reserve this session? You will be changed $100 as a registration fee.');
+							$('#confirm').attr({'action': '/attend_session'});
 
 		    				if (data.early_bird) {
 		    					$('.confirm_modal_body').text('Are you sure you want to reserve this session? You will be changed $50 (50% Early Bird Discount) as a registration fee.');
