@@ -41,8 +41,8 @@ def index():
 @app.route('/login', methods=['POST','GET'])
 def login():
 	error = ''
-	type = 'userid'
-	id = request.form.get('userid', '')
+	type = 'zid'
+	id = request.form.get('zid', '')
 	password = request.form.get('password', '')
 
 	if id == '':
