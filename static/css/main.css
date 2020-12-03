@@ -56,7 +56,7 @@ footer {
 }
 
 footer .footer-stuff {
-	max-width: 640px;
+	width: 25em;
 	margin: 0 auto;
 }
 
