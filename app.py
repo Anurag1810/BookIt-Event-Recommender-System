@@ -38,8 +38,8 @@ app.jinja_loader = jinja2.FileSystemLoader(['./static/templates', './static/temp
 # flask email setup
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'hacker.comp1531@gmail.com'
-app.config['MAIL_PASSWORD'] = 'hacker1531'
+app.config['MAIL_USERNAME'] = 'ems.owner280@gmail.com'
+app.config['MAIL_PASSWORD'] = 'cmpe@280'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail.app = app
@@ -119,13 +119,13 @@ def first_run():
 	with open('./user.csv') as csvfile:
 		reader = csv.DictReader(csvfile)
 		for row in reader:
-			name, zid, email, password, role = row.values()
+			name, userid, email, password, role = row.values()
 			if role == 'trainee':
-				u = Student(id=zid, name=name, password=password, email=email)
+				u = Student(id=userid, name=name, password=password, email=email)
 				db.session.add(u)
 			elif role == 'trainer':
 				# add user to db
-				u = Staff(id=zid, name=name, password=password, email=email)
+				u = Staff(id=userid, name=name, password=password, email=email)
 				db.session.add(u)
 	# add user to db
 	u = Staff(name='Admin', id=1234, password=1234, email='admin@unsw.edu.au')

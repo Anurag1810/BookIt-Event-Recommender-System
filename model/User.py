@@ -16,10 +16,10 @@ class User(UserMixin, db.Model):
 
 	def emailNotification(self, message):
 		msg = Message("Enrollment Notification",
-					  sender="hacker.comp1531@gmail.com",
+					  sender="ems.owner280@gmail.com",
 					  recipients=[self.email])
 		msg.body = message
-		# mail.send(msg)
+		#mail.send(msg)
 		print('Email has been sent to %s, content: %s' % (self.email, message));
 
 	def reset_password_notification(self):
