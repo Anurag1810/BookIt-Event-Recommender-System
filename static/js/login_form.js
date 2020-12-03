@@ -49,7 +49,7 @@ $(document).on('submit', '#logout', function(){
 function bind_checkbox_event() {
     $('#guest_login_checkbox').change(function() {
         if ($(this).is(':checked')) {
-            let label = $('label[for=input_userid]');
+            let label = $('label[for=input_zid]');
             let input = label.next().children();         
             label.text('Email');
             label.attr('for', 'input_email');
@@ -61,11 +61,11 @@ function bind_checkbox_event() {
             let label = $('label[for=input_email]');
             let input = label.next().children();              
             label.text('Username');
-            label.attr('for', 'input_userid');
+            label.attr('for', 'input_zid');
 
             input.attr('placeholder', 'Please enter your username');
-            input.attr('name', 'userid');
-            input.attr('id', 'input_userid');
+            input.attr('name', 'zid');
+            input.attr('id', 'input_zid');
         }
     });
 }

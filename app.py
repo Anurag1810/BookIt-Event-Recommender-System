@@ -119,16 +119,16 @@ def first_run():
 	with open('./user.csv') as csvfile:
 		reader = csv.DictReader(csvfile)
 		for row in reader:
-			name, userid, email, password, role = row.values()
+			name, zid, email, password, role = row.values()
 			if role == 'trainee':
-				u = Student(id=userid, name=name, password=password, email=email)
+				u = Student(id=zid, name=name, password=password, email=email)
 				db.session.add(u)
 			elif role == 'trainer':
 				# add user to db
-				u = Staff(id=userid, name=name, password=password, email=email)
+				u = Staff(id=zid, name=name, password=password, email=email)
 				db.session.add(u)
 	# add user to db
-	u = Staff(name='Admin', id=1234, password=1234, email='admin@unsw.edu.au')
+	u = Staff(name='Admin', id=1234, password=1234, email='admin@gmail.com')
 	db.session.add(u)	
 	u.secret_token = '1'
 	db.session.commit()

@@ -27,7 +27,7 @@ class userManager():
 		return self.users.query.filter_by(email=user_email, discriminator='guest').first()
 
 	def userValidation(self, id, password, type):
-		if type == 'userid':
+		if type == 'zid':
 			user = self.get_user_by_id(id)
 		else:
 			user = self.get_guest_user_by_email(id)
