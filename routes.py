@@ -95,7 +95,7 @@ def load_more():
 
 @login_manager.user_loader
 def load_user(user_id):
-	return ems.user_manager.get_user_by_id(int(user_id))
+	return ems.user_manager.get_user_by_id(str(user_id))
 
 
 # dashboard for user
