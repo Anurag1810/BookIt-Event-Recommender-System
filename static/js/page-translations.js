@@ -45,17 +45,29 @@ var linguJSON = {
             "target": "Curso",
         },
         {
-            "source": "Course",
-            "target": "Curso",
+            "source": "BookIt- Event Manager Application",
+            "target": "BookIt- Aplicación de administrador de eventos",
         },
         {
             "source": "Course",
             "target": "Curso",
         },
         {
-            "source": "Course",
-            "target": "Curso",
-        }
-        
+            "source": "BookIt is an Event management website through which you can create, book and cancel virtual events.",
+            "target": "BookIt es un sitio web de gestión de eventos a través del cual puede crear, reservar y cancelar eventos virtuales.",
+        },
+                {
+            "source": "Chat",
+            "target": "Charla",
+        },
+                {
+            "source": "Logout",
+            "target": "Cerrar Sesión",
+        },
+                {
+            "source": "In Person",
+            "target": "En persona",
+        },
+
     ]
 };
