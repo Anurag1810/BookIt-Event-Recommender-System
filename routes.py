@@ -103,11 +103,12 @@ def load_user(user_id):
 @login_required
 def dashboard():
 	if current_user.discriminator == 'trainer':
-		mapping = [['Attending', 'attending'], ['Passed', 'attended'], ['Your Events', 'openPosts'], ['Your Past Events', 'closedPosts'], ['Cancelled Events', 'cancelled']]
+		mapping = [['Attending', 'attending'], ['Passed', 'attended'], ['Your Events', 'openPosts'], ['Your Past Events', 'closedPosts'], ['Cancelled Events', 'cancelled'], ['Recommended Events', 'attending']]
 	else:
-		mapping = [['Attending', 'attending'], ['Past', 'attended']]
+		mapping = [['Attending', 'attending'], ['Past', 'attended'], ['Recommended Events', 'attending']]
 
 	return render_template('dashboard.html', mapping=mapping)
+
 
 
 # detail for any event
