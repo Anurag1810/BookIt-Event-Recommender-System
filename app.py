@@ -140,10 +140,10 @@ def first_run():
 	v = Venue.query.all()[0]
 
 	for i in range(0, 3):
-		db.session.add(SeminarEvent(name='''seminar %d''' %i, description='''this is seminar %d''' %i, capacity=60, start_time=datetime.now(), end_time=datetime.now(), convenor=u, venue=v))
+		db.session.add(SeminarEvent(name='''seminar %d''' %i, description='''this is an in person event %d''' %i, capacity=60, start_time=datetime.now(), end_time=datetime.now(), convenor=u, venue=v))
 
 	# add event to db
-	db.session.add(CourseEvent(name='course 1', description='this is course 1', capacity=60, start_time=datetime.now(), end_time=datetime.now(), convenor=u, venue=v))
+	db.session.add(CourseEvent(name='course 1', description='this is a virtual event', capacity=60, start_time=datetime.now(), end_time=datetime.now(), convenor=u, venue=v))
 
 	s = SeminarEvent.query.all()[0]
 	c = CourseEvent.query.all()[0]

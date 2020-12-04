@@ -9,10 +9,10 @@
 									<div class="card-body">
 					    			<h5 class="card-title">{{e.name}}
 					    			{% if e is SeminarEvent %}
-					    				<span class="badge badge-pill badge-warning">seminar</span>
+					    				<span class="badge badge-pill badge-warning">In person</span>
 					    			{% endif %}
 					    			{% if e is CourseEvent %}
-					    				<span class="badge badge-pill badge-info">course</span>
+					    				<span class="badge badge-pill badge-info">Virtual</span>
 					    			{% endif %}
 					    			<hr>
 

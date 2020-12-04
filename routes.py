@@ -33,7 +33,7 @@ def root():
 #default returns the login page
 @app.route('/index', methods=['GET'])
 def index():
-	mapping = [['All Events', 'index'], ['Seminar', 'seminar'], ['Course', 'course']]
+	mapping = [['All Events', 'index'], ['In Person', 'seminar'], ['Virtual', 'course']]
 	return render_template('index.html', mapping=mapping)
 
 
